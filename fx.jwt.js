@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 class FxJwt {
   signAccessToken(accountId, clientId) {
-    let { secretKey, expiresIn } = global.config.jwt;
+    let { secretKey, accessTokenExpiresIn } = global.config.jwt;
     const token = jwt.sign(
       {
         accountId,
@@ -17,7 +17,7 @@ class FxJwt {
   }
 
   signRefeshToken(accountId, clientId) {
-    let { secretKey, expiresIn } = global.config.jwt;
+    let { secretKey, refeshTokenExpiresIn } = global.config.jwt;
     const token = jwt.sign(
       {
         accountId,
