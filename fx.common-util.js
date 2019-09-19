@@ -1,3 +1,5 @@
+const shortid = require('shortid');
+
 class FxCommonUtil {
   checkScriptRuningOnNode() {
     const isNode =
@@ -18,25 +20,12 @@ class FxCommonUtil {
     });
   }
 
-  uniqueCode(prefix = '') {
-    const characters =
-      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const ticks = new Date().getTime().toString();
-    let code = `${prefix}`;
-    for (let i = 0; i < characters.length; i += 2) {
-      if (i + 2 > ticks.length) continue;
-      const number = parseInt(ticks.substr(i, 2));
-      if (number > characters.length - 1) {
-        const sNumber = number.toString();
-        const one = sNumber.substr(0, 1);
-        const two = sNumber.substr(1, 1);
-        code += characters[parseInt(one)];
-        code += characters[parseInt(two)];
-      } else {
-        code += characters[number];
-      }
-    }
-    return code;
+  async uniqueCode(
+    prefix = '',
+    characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_'
+  ) {
+    shortid.characters(characters);
+    return `${prefix}${shortid.generate()}`;
   }
 
   randomString(length, chars = '0123456789') {
