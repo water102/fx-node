@@ -1,6 +1,6 @@
 {
   "name": "@water102/fx-node",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "author": "HoanNN",
   "main": "index.js",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/water102/fx-node#readme",
   "dependencies": {
     "jsonwebtoken": "^8.5.1",
-    "sequelize": "^5.19.1",
+    "sequelize": "^5.21.5",
     "shortid": "^2.2.15"
   }
 }
