@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/water102/fx-node#readme",
   "dependencies": {
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "sequelize": "^5.21.5",
     "shortid": "^2.2.15"
   }
